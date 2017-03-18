@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+  
+    <head>
+        <title>Registration</title>
+        <meta charset="UTF-8">       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.css" media="screen">
+        <link rel="shortcut icon" href="img/arts0150.png">
+    </head>
+    <body style="padding-left:60px;padding-right:60px;">
+     
+<script>
+  webshims.setOptions('waitReady', false);
+  webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+</script>
+        <div class="panel panel-default">
+            <div class="panel-heading"><h1>Registration</h1></div>
+      <div class="panel-body">
+          <form id="form" name="form" action="Registration" method="POST"  onsubmit="return isValidForm()" >
+            <div id="Name"><p>First</p></div>
+            <input id="name" name="name" type="text" value="John"/><BR>
+            <div ><p>Last </p></div>
+            <input id="last" name="last" type="text" value="Smith"/><BR>
+            <div ><p>Birthdate</p></div>
+            <input name="year" type="date" value="1970-12-21"/><BR>
+            <input name="time" type="time" value="12:36:09"/><BR>
+            <div ><p>e-mail</p></div>
+            <input id="email" name="email" type="email"  value="email@example.com"/><BR>
+            <div ><p>Password</p></div>
+            <input id="password" name="password" type="password" value=""/><BR>
+            <div ><p>Confirm password</p></div>
+            <input id="confirm" name="confirm" type="password"  value="" /><BR><BR>
+            <input  class="btn btn-primary btn-lg" id="b1" type="submit" name="button" value="submit"/> 
+          </form>
+          <BR>
+          <a href="index.jsp">Already registered?</a>
+      </div>
+      </div>
+        
+        <script src="http://code.jquery.com/jquery-latest.min.js" ></script>
+        <script>
+         /*  var msg="You bitch";
+            $("#b1").on("click",function()
+            {
+                if(document.getElementById("name").value=="")
+                {
+                    document.getElementById("form").onsubmit = function() 
+                    { return false; };
+                    
+                    document.getElementById("text").style.color = "coral";
+                }
+            });*/
+            function isValidForm()
+            {
+                 if(document.getElementById("name").value=="")
+                 {
+                     document.getElementById("name").style.backgroundColor="coral";
+                      return false;
+                 } else  document.getElementById("name").style.backgroundColor="white";
+                      if(document.getElementById("last").value=="")
+                       {
+                     document.getElementById("last").style.backgroundColor="coral";
+                      return false;
+                 } else  document.getElementById("last").style.backgroundColor="white";
+                     if( document.getElementById("email").value=="")
+                      {
+                     document.getElementById("email").style.backgroundColor="coral";
+                      return false;
+                 }else  document.getElementById("email").style.backgroundColor="white";
+                      if(document.getElementById("password").value=="")
+                           {
+                     document.getElementById("password").style.backgroundColor="coral";
+                      return false;
+                 } else  document.getElementById("password").style.backgroundColor="white";
+                      if(document.getElementById("confirm").value!=document.getElementById("password").value)
+                       {
+                     document.getElementById("confirm").style.backgroundColor="coral";
+                      return false;
+                 }  else  document.getElementById("name").style.backgroundColor="white";
+                
+             return true;
+            }
+        </script>
+    </body>
+</html>
